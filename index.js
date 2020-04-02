@@ -11,9 +11,9 @@ var sha512 = function(string) {
 };
 
 server.on('connection', function connection(ws, req) {
-    var id = null;
+	var id = null;
 	var client = sha512(req.headers['sec-websocket-key']);
-    ws.on('message', function incoming(msg) {
+	ws.on('message', function incoming(msg) {
 		if(id === null) {
 			id = sha512(msg);
 			Broker.on(id, (sender, m) => {
@@ -24,5 +24,5 @@ server.on('connection', function connection(ws, req) {
 			return ":-)"
 		}
 		Broker.emit(id, client, msg);
-    });
+	});
 });
