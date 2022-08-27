@@ -1,4 +1,4 @@
 # WebshocketHost
-CONNECT  wss://wsnoob.herokuapp.com  
+CONNECT
 SEND ID  
 SEND/RECEIVE MESSAGE
